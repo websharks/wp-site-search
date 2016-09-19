@@ -66,7 +66,7 @@ $Form = $this->s::menuPageForm('§save-options');
             'type'        => 'text',
             'label'       => __('Query Variable', 'wp-site-search'),
             'placeholder' => __('q', 'wp-site-search'), // Keep this simple; i.e., just the ideal value.
-            'tip'         => __('Variable your Search Page receives for a new incoming search query; e.g., for <code>?q=[query]</code>, just type <code>q<code> into this field.', 'wp-site-search'),
+            'tip'         => __('The variable your Search Page receives for a new incoming search query; e.g., for <code>?q=[query]</code>, just type <code>q</code> as the variable name.', 'wp-site-search'),
             'note'        => __('<code>q</code> is suggested for best compatibility with WordPress, AdSense, and Google Analytics.', 'wp-site-search'),
 
             'name'  => 'q_var',
@@ -102,7 +102,7 @@ $Form = $this->s::menuPageForm('§save-options');
                              sprintf(__('Articles|*.%1$s/article/*', 'wp-site-search'), esc_attr($this->App->Config->©urls['©hosts']['©roots']['©app']))."\n".
                              sprintf(__('Products|*.%1$s/product/*', 'wp-site-search'), esc_attr($this->App->Config->©urls['©hosts']['©roots']['©app'])),
             'tip'  => __('A list of additional patterns that become search tabs.<hr />This allows a user to refine their search. Each line in this configuration becomes a new tab in the search interface.', 'wp-site-search'),
-            'note' => __('e.g., <code>Title</code>|<code>pattern</code> ... (one per line).', 'wp-site-search'),
+            'note' => sprintf(__('e.g., <code>Title</code>|<code>pattern</code> ... (one per line). See: <a href="%1$s" target="_blank">Custom Search Tabs</a>', 'wp-site-search'), esc_url(s::brandUrl('/kb-article/creating-custom-search-tabs'))),
 
             'name'  => 'google_cse_facets',
             'value' => s::getOption('google_cse_facets'),
